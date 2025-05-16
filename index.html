@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM in javscript</title>
+</head>
+<body>
+    <!-- დავალება 1: Html კოდში მოცემულია ღილაკი id სელექტორით "button". querySelector–ის გამოყენებით მოვძებნოთ ეს
+ღილაკი id–ის მიხედვით და მიღებული შედეგი ჩავწეროთ ცვლადში myButton. შემდეგ myButton–ის
+მნიშვნელობა კონსოლზე გამოვიტანოთ. -->
+    <h2>დავალება 1</h2>
+    <input id="button" type="submit">
+    
+ <script>
+    // აქ ჩაწერეთ თქვენი პასუხი
+       var myButton = document.querySelector("#button")
+       console.log(myButton);
+</script>
+
+
+<!-- დავალება 2: Html კოდში მოცემულია 3 აბზაცი. querySelector–ის გამოყენებით მიიღეთ ყოველი აბზაცის ბმული, ჩაწერეთ
+ისინი ცალ–ცალკე ცვლადებში და ამ ცვლადების მნიშვნელობები კონსოლზე გამოიტანეთ. -->
+    <h2>დავალება 2</h2>
+    <p id="p1">აბზაცი1</p>
+    <p id="p2">აბზაცი2</p>
+    <p id="p3">აბზაცი3</p>
+<script>
+    // აქ ჩაწერეთ თქვენი პასუხი
+    var result0 = document.querySelector("#p1")
+    var result1 = document.querySelector("#p2")
+    var result2 = document.querySelector("#p3")
+    console.log(result0);
+    result0.style.color = "red"
+    console.log(result1);
+    console.log(result2);
+</script>
+
+
+<!-- დავალება 3: Html კოდში მოცემულია 2 აბზაცი. querySelector–ის გამოყენებით მიიღეთ პირველი აბზაცის ბმული დივიდან
+რომლის id-ია "twoParagraphs". მიღებული შედეგი კონსოლზე გამოვიტანოთ. -->
+    <h2>დავალება 3</h2>
+    <div id="twoParagraphs">
+        <p>პირველი აბზაცი</p>
+        <p>მეორე აბზაცი</p>
+    </div>
+   
+<script>
+    var firstParagraph = document.querySelector("#twoParagraphs p")
+    firstParagraph.style.color = "green"
+    console.log(firstParagraph);
+// აქ ჩაწერეთ თქვენი პასუხი
+</script>
+
+
+<!-- დავალება 4: Html კოდში მოცემულია 2 აბზაცი. querySelector–ის გამოყენებით მიიღეთ პირველი აბზაცის ბმული რომლის
+კლასია "p". მიღებული შედეგი კონსოლზე გამოვიტანოთ. -->
+    <h2>დავალება 4</h2>
+    <p class="p">text1</p>
+    <p class="p">text2</p>
+<script>
+    var p = document.querySelector('.p')
+    p.style.color = "blue"
+    console.log(p);
+</script> 
+
+
+<!-- დავალება 5: მოცემულია 3 ღილაკი. ყოველი ღილაკის დაკლიკებაზე კოსოლზე გამოიტანეთ შესაბამისი შეტყობინება
+'პირველი ღილაკი', 'მეორე ღილაკი', 'მესამე ღილაკი'. მინიშნება: ყველა ღილაკისთვის გამოაცხადეთ
+ცვლადები, რომლებშიც querySelector–ის გამოყენებით ჩაწერეთ შესაბამისი ღილაკების ბმულები. ამ ცვალდებს
+გაუწერეთ addEventListener, რომელიც ღილაკის დაკლიკებაზე კონსოლზე გამოიტანს შესაბამის ტექსტს. -->
+    <h2>დავალება 5</h2>
+    <form action="">
+        <p id="button_1"></p>
+        <input id="button_1" type="button" value="ღილაკი1" onclick="insertElement1()">
+        
+        <p id="button_2"></p>
+        <input id="button_2" type="button" value="ღილაკი2" onclick="insertElement2()">
+        
+        <p id="button_3"></p>
+        <input id="button_3" type="button" value="ღილაკი3" onclick="insertElement3()">
+    </form>
+    <script>
+    // აქ ჩაწერეთ თქვენი პასუხი
+        function insertElement1() {
+            var button1 = document.getElementById("button_1");
+            button1.textContent = "პირველი ღილაკი";
+        };
+        function insertElement2() {
+            var button2 = document.getElementById("button_2");
+            button2.textContent = "მეორე ღილაკი";
+        };
+        function insertElement3() {
+            var button3 = document.getElementById("button_3");
+            button3.textContent = "მესამე ღილაკი";
+        };
+    </script>
+
+
+<!-- მოცემულია შემდეგი Html კოდი: -->
+    <h2>დავალება 6</h2>
+    <p id="shekreba"></p>
+    <input id="button_1" type="button" value="2 + 2" onclick="mimateba()">
+
+    <p id="gamravleba"></p>
+    <input id="button_2" type="button" value="3 * 3" onclick="multiplication()">
+    
+    <p id="divide"></p>
+    <input id="button_3" type="button" value="4 / 4 " onclick="divide()">
+<!-- ასევე მოცემულია 3 ფუნქცია: --> 
+    <script>
+        function mimateba() {
+            var mimateba = document.getElementById("shekreba");
+            var calculacia = 2 + 2;
+            mimateba.textContent = calculacia;
+            };
+
+        function multiplication() {
+            var gamravleba = document.getElementById("gamravleba");
+            var calculacia = 3 * 3;
+            gamravleba.textContent = calculacia;
+            };
+
+        function divide() {
+            var gayofa = document.getElementById("divide");
+            var calculacia = 4 / 4;
+            gayofa.textContent = calculacia;
+            };
+    </script>
+<!-- დაწერეთ კოდი, რომლითაც პირველ ღილაკზე დაჭერით შესრულდება ფუნქცია sum , მეორე ღილაკზე დაჭერით
+ფუნქცია multiplication და მესამე ღილაკზე დაჭერით ფუნქცია divide -->
+    <h2>დავალება 7</h2>
+<!-- მოცემულია Html კოდი: -->
+    <p id="elem1" onclick="myFunc()">First Paragraph</p>
+    <p id="elem2" onclick="myFunc()">Second Paragraph</p>
+    <p id="elem3" onclick="myFunc()">Third Paragraph</p>
+<!-- ასევე მოცემულია ფუნქცია: -->
+
+ 
+    <script>
+    // აქ ჩაწერეთ თქვენი პასუხი
+    var gamodzaxeba1 = document.getElementById("elem1");
+    var gamodzaxeba2 = document.getElementById("elem2");
+    var gamodzaxeba3 = document.getElementById("elem3");
+    function myFunc() {
+        gamodzaxeba1.innerHTML = "ახალი შეტყობინება";
+        gamodzaxeba2.innerHTML = "ახალი შეტყობინება";
+        gamodzaxeba3.innerHTML = "ახალი შეტყობინება";
+        }
+    </script>
+
+
+    <h2>დავალება 8</h2>
+<!-- მოცემულია Html კოდი: -->
+    <button id="ghilaki" type="button">სუპერ ღილაკი</button>
+<!-- ასევე მოცემულია ორი ფუნქცია: -->
+    <script>
+    // აქ ჩაწერეთ თქვენი პასუხი
+    var ghilaki = document.getElementById("ghilaki");
+    var text = [
+        "საინტერესო შეტყობინება",
+        "სუპერ ღილაკზე მოხდა დაკლიკება"
+        ];
+
+    clcikN = 0;
+    ghilaki.addEventListener("click", ()=>{
+        var i = clcikN % text.length;
+        clcikN++;
+        ghilaki.textContent = text[i];
+    });
+
+
+
+
+
+ function myFunc2() {
+ console.log('სუპერ ღილაკზე მოხდა დაკლიკება');
+ }
+
+
+
+    </script>
+<!-- დაწერეთ კოდი, რომელიც ღილაკზე დაკლიკებისას ჯერ გამოიძახებს ფუნქციას myFunc1–ს, მერე myFunc2–ს. -->
+
+
+<!-- დავალება9: მოცემულია Html კოდი: -->
+    <h2>davalebaa 9</h2>
+    <p id="test">click here</p>
+<!-- ასევე მოცემულია სამი ფუნქცია: 
+    დაწერეთ კოდი, რომელიც აბზაცზე დაკლიკებისას ჯერ გამოიძახებს ფუნქციას myFunc1–ს, მერე myFunc2–ს და
+    ბოლოს myFunc3–ს.-->
+    <script type="text/javascript">
+        var mizani = document.getElementById("test");
+        var message = [
+            "შეტყობინება 1",
+            "შეტყობინება 2",
+            "შეტყობინება 3",
+            "შეტყობინება 4",
+        ];
+        console.log(message.length);
+        click = 0;
+        mizani.addEventListener("click", ()=> {
+            click++;
+            var index = click % message.length;
+            mizani.textContent = message[index];
+        } )
+    </script>
+
+
+
+
+    <h2>დავალება 10</h2>
+<!-- მოცემულია რაიმე ღილაკი. მასზე ორმაგი დაკლიკებით კონსოლზე გამოვიდეს შეტყობინება 'სუპერ ღილაკზე
+მოხდა ორმაგი დაკლიკება' -->
+    <p id="buton"></p>
+    <input id="button" type="button" value="სუპერ ღილაკი" ondblclick="doubleClick()">
+
+    <script>
+        // აქ ჩაწერეთ თქვენი პასუხი
+        function doubleClick() {
+            var db = document.getElementById("buton");
+            db.textContent = "სუპერ ღილაკზე მოხდა ორმაგი დაკლიკება"
+        } 
+    </script>
+
+
+    <h2>დავალება 11</h2>
+    <!-- მოცემულია რაიმე ღილაკი. მასზე მაუსის გადატრებისას (mouse over) კონსოლზე გამოვიდეს შეტყობინება
+'სუპერ ღილაკზე მოხდა მაუსის გადატარება' -->
+    <p id="button_over"></p>
+    <input id="button" type="submit" value="სუპერ ღილაკი" onmouseover="mouseOver()">
+    <script>
+        // აქ ჩაწერეთ თქვენი პასუხი
+        function mouseOver() {
+            var over = document.getElementById("button_over");
+            over.textContent = "სუპერ ღილაკზე მოხდა მაუსის გადატარება"
+        } 
+    </script>
+
+
+    <h2>დავალება 12</h2>
+<!-- მოცემულია რაიმე ღილაკი. მისგან მაუსის მოცილებისასა (mouse out) კონსოლზე გამოვიდეს შეტყობინება
+'სუპერ ღილაკიდან მოხდა მაუსის მოცილება' -->
+    <p id="mouseLeft"></p>
+    <input id="button" type="submit" value="სუპერ ღილაკი" onmouseleave="mouseLeft()">
+    <script>
+        // აქ ჩაწერეთ თქვენი პასუხი
+        function mouseLeft() {
+            var left = document.getElementById("mouseLeft");
+            left.textContent = "სუპერ ღილაკზე მოხდა მაუსის მოცილება"
+        } 
+    </script>
+
+
+    <h2>დავალება 13</h2>
+<!-- მოცემულია რაიმე ღილაკი. მასზე მაუსის გადატრებისას (mouse over) კონსოლზე გამოვიდეს შეტყობინება
+'სუპერ ღილაკზე მოხდა მაუსის გადატარება', ხოლო მისგან მაუსის მოცილებისასა გამოვიდეს შეტყობინება
+'სუპერ ღილაკიდან მოხდა მაუსის მოცილება'-->
+    <p id="press"></p>
+    <input id="button" type="submit" value="სუპერ ღილაკი" onmouseover="mouseOver()" onmouseleave="mouseLeft()">
+
+
+    <script>
+        // აქ ჩაწერეთ თქვენი პასუხი
+        var press = document.getElementById("press");
+        function mouseOver() {
+            press.textContent = "სუპერ ღილაკზე მოხდა მაუსის გადატარება";
+            console.log(press.innerHTML); 
+        } 
+        function mouseLeft() {
+            press.textContent = "სუპერ ღილაკზე მოხდა მაუსის მოცილება";
+            console.log(press.innerHTML);
+        }
+    </script>
+
+
+    <h2>დავალება 14</h2>
+    <!-- Html კოდში მოცემულია პარაგრაფი, რომლის id არის myText: -->
+    <p id="myText">Some text</p>
+<!-- querySelector–ით მივიღოთ ეს პარაგრაფი და მივანიჭოთ ცვლადს myElem-ს. ტtextContent-ის საშუალებით
+myElem-ში ჩავწეროთ ტექსტი 'ახალი პარაგრაფი'. -->
+
+
+    <script>
+    // აქ ჩაწერეთ თქვენი პასუხი
+        var myElem = document.querySelector("#myText")
+        myElem.textContent = "ახალი პარაგრაფი"
+    </script>
+</body>
+</html>
